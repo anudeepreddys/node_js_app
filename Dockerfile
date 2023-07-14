@@ -1,19 +1,8 @@
-FROM node:18
+# Use the official Nginx image as the base
+FROM nginx:latest
 
-# Create app directory
-WORKDIR /usr/src/app
+# Copy the custom index.html file to the appropriate location
+COPY index.html /usr/share/nginx/html/
 
-# Install app dependencies
-# A wildcard is used to ensure both package.json AND package-lock.json are copied
-# where available (npm@5+)
-COPY package*.json ./
-
-RUN npm install
-# If you are building your code for production
-# RUN npm ci --omit=dev
-
-# Bundle app source
-COPY . .
-
-EXPOSE 8080
-CMD [ "node", "server.js" ]
+# Expose port 80 to allow incoming HTTP traffic
+EXPOSE 80
