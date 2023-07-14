@@ -11,7 +11,7 @@ pipeline{
 		stage('Build') {
 
 			steps {
-				sh 'docker build -t anudeepreddys/ngnix_custom:latest .'
+				sh 'docker build -t anudeepreddys/ngnix_custom:$BUILD_NUMBER .'
 			}
 		}
 
@@ -25,7 +25,7 @@ pipeline{
 		stage('Push') {
 
 			steps {
-				sh 'docker push anudeepreddys/ngnix_custom:latest'
+				sh 'docker push anudeepreddys/ngnix_custom:$BUILD_NUMBER'
 			}
 		}
 	}
