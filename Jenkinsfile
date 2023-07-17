@@ -32,7 +32,7 @@ pipeline{
       		steps {
         		script {
           			kubeconfig(credentialsId: 'eks_config', serverUrl: '') {
-   						sh 'kubectl create deployment nginx --image=anudeepreddys/ngnix_custom:$BUILD_NUMBER'
+   						sh 'kubectl apply -f deploymentservice.yaml'
 					}
        			 }
       		}
