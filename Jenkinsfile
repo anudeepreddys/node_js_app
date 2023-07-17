@@ -39,5 +39,11 @@ pipeline{
        			 }
       		}
     	}
+		stage('email alert'){
+			steps {
+				script
+					emailext body: 'build successful', subject: 'build succeded', to: 'solleti.anudeep76@gmail.com'4
+			}
+		}
 	}
 }
