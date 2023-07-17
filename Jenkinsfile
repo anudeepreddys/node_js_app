@@ -34,7 +34,7 @@ pipeline{
           			kubeconfig(credentialsId: 'eks_config', serverUrl: '') {
 						sh 'pwd'
 						sh 'ls'
-   						sh 'kubectl apply -f deploymentservice.yaml'
+   						sh 'kubectl apply -f deploymentservice.yml'
 					}
        			 }
       		}
