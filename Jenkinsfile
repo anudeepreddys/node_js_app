@@ -42,7 +42,7 @@ pipeline{
 		stage('email alert'){
 			steps {
 				script {
-					emailext body: 'build successful', subject: 'build succeded', to: 'solleti.anudeep76@gmail.com'
+					mail bcc: '', body: 'Build succesful', cc: '', from: '', replyTo: '', subject: 'Build succesful', to: 'solleti.anudeep76@gmail.com'
 				}	
 			}
 		}
