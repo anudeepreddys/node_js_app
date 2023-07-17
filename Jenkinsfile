@@ -32,7 +32,9 @@ pipeline{
       		steps {
         		script {
           			kubeconfig(credentialsId: 'eks_config', serverUrl: '') {
-						sh 'pwd'
+						sh 'pwd \
+						ls'
+
    						sh 'kubectl apply -f deploymentservice.yaml'
 					}
        			 }
